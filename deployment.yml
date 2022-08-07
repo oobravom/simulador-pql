@@ -1,0 +1,18 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: simulador-pql-deployment
+  namespace: tlacotec
+spec:
+  selector:
+    matchLabels:
+      app: simulador-pql
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: simulador-pql
+    spec:
+      containers:
+      - name: oobravom-simulador-pql
+        image: oobravom/simulador-pql:1.0-SNAPSHOT
